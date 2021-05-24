@@ -1,0 +1,382 @@
+@import 'font';
+
+:root {
+  --sidebar-width: 270px;
+  --sidebar-color: #F8F9FA;
+}
+
+html {
+  min-width: var(--sidebar-width);
+}
+
+body {
+  background: #fafafa;
+}
+
+.cover {
+  position: fixed;
+  z-index: 98;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  filter: alpha(opacity=60);
+  background-color: #777;
+  left: 0px;
+  display: none;
+  opacity: 0.5;
+  -moz-opacity: 0.5;
+}
+
+
+a,
+a:hover,
+a:focus {
+  color: inherit;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.navbar {  
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  width: 100%;
+  top: 0;
+  border: none;
+  border-radius: 0;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .navbar-title {
+  padding-left: 5px;
+  font-size: large;
+  text-align: center;
+  max-width: 60%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.navbar-collapse  {
+  width: 120px;
+}
+
+.navbar .navbar-toggler {
+  color: #000;
+  border-style: none;
+  outline: none;
+}
+
+/* ---------------------------------------------------
+    SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+#sidebar {
+  position: fixed;
+  z-index: 99;
+  height: calc(100% - 56px);
+  bottom: 0px;
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
+  background: var(--sidebar-color);
+  /* #7386d5; */  
+  border: none;
+  transition: all 0.3s;
+  overflow-y: hidden;
+  /* box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);   */
+}
+
+#sidebar.active {
+  margin-left: 0;
+}
+
+#sidebar .sidebar-header {
+  padding: 20px;
+  background: var(--sidebar-color);
+  /* #6d7fcc; */
+}
+
+/* #sidebar .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 36px;
+  margin-left: 50px;
+} */
+
+#sidebar ul.components {
+  padding-bottom: 20px 0;
+  border-bottom: 1px solid #47748b;
+}
+
+#sidebar ul p {
+  color: #000;
+  padding: 10px;
+}
+
+#sidebar ul li a {
+  padding: 10px;
+  /* font-size: 1em; */
+  display: block;
+}
+
+#sidebar ul li a:hover {
+  background: #D4D4D4;
+}
+
+#sidebar ul li.active > a,
+a[aria-expanded="true"] {
+  color: #000;
+  background: #E5E5E5;
+}
+
+a[data-toggle="collapse"] {
+  position: relative;
+}
+
+.dropdown-toggle::after {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+}
+
+ul ul a {
+  font-size: 0.9em !important;
+  /* padding-left: 30px !important; */
+  background: #F8F9FA;
+  /* 6d7fcc; */
+}
+
+ul.CTAs {
+  padding: 20px;
+}
+
+ul.CTAs a {
+  text-align: center;
+  font-size: 0.9em !important;
+  display: block;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+// a.download {
+//   background: #000;
+//   color: #6d7fcc !important;
+// }
+
+// a.download:hover {
+//   background: #6d7fcc !important;
+//   color: #fff;
+// }
+
+a.email-btn,
+a.email-btn:hover {
+  color: #000;
+  background: #d1d1d1 !important;
+  /* background: #6d7fcc !important;
+  color: #fff !important; */
+}
+
+/* ---------------------------------------------------
+    CONTENT STYLE
+----------------------------------------------------- */
+
+#content {
+  width: 100%;
+  padding: 15px 10px;
+  min-height: 100vh;
+  transition: all 0.3s;
+  margin-left: var(--sidebar-width);
+  margin-top: 50px;
+  overflow: auto;
+  background-color: #f1f1f1;
+}
+
+.nav-groups {
+  // font-size: 0.93em;
+  /* position: fixed; */
+  background-color: var(--sidebar-color);
+  z-index: 97;
+  margin-bottom: 6px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+.nav-groups .components {
+  padding: 6px;
+  overflow: auto;
+}
+
+.nav-groups a {
+  display: inline-block;
+  padding: 6px;
+}
+
+.nav-groups a:hover {
+  background: #D4D4D4;
+}
+
+.topic-container {
+  /* position: absolute; */
+  /* margin-top: 90px; */
+  background-color: var(--sidebar-color);
+  padding: 6px;
+}
+
+.topic {
+  padding: 6px;
+}
+
+.topic-channel {  
+  font-size: 0.8em;
+  color: #8c8b8b;
+  letter-spacing: 0.4px;
+  // padding: 6px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.topic .topic-channel-title {
+  color: #000;
+  max-width: 35%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.topic-title {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}
+
+.topic-tag-group {
+  /* overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  white-space: nowrap; */
+  padding-top: 8px;
+  display: block;
+  color: grey;
+  font-size: 0.9em;
+  letter-spacing: 0.4px;
+  text-align: right; 
+}
+
+.topic-tag-item {
+  padding: 8px;
+}
+
+.topic-tag-item:hover {
+  color: #000;
+  background: #D4D4D4;
+  padding: 10px;
+}
+
+.topic-content {
+  padding: 10px;
+}
+
+.topic-content img {
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  display: block;
+  clear: both;
+}
+
+.topic-content video {
+  max-width: 100%;
+  max-height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  display: block;
+}
+
+.topic-content a {
+  padding: 4px;
+  color: blue;
+  letter-spacing: 0.4px;
+}
+
+.line {
+  /* width: calc(100% - var(--sidebar-width)); */
+  height: 1px;
+  border-bottom: 1px solid #ddd;
+}
+
+#ToTopButton {
+  position: fixed;
+  bottom: 20px;
+  right: 35px;
+  z-index: 9999;
+}
+
+/* ---------------------------------------------------
+    MEDIAQUERIES
+----------------------------------------------------- */
+
+@media (min-width: 768px) {
+  #sidebarCollapse {
+    display: none;
+  }
+
+  /* #sidebar .closebtn {
+    display: none;
+  } */
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    width: 100%;
+  }
+
+  .line {
+    width: 100%;
+  }
+
+  #sidebar {
+    margin-left: calc(0px - var(--sidebar-width));
+  }
+
+  #sidebar.active {
+    height: calc(100% - 48px);
+    margin-left: 0;
+  }
+
+  #sidebarCollapse {
+    display: inline;
+  }
+  /* #sidebar .closebtn {
+    display: inline;
+  } */
+
+  #content {
+    margin-left: 0;
+  }
+
+  .nav-groups {
+    top: -8px;
+  }
+}
